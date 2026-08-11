@@ -2,6 +2,7 @@
 name = "rscan"
 version = "0.1.0"
 edition = "2021"
+default-run = "rscan"
 
 [dependencies]
 clap = { version = "4.5", features = ["derive"] }
@@ -11,6 +12,18 @@ rayon = "1.10"
 tempfile = "3.10"
 criterion = { version = "0.5", features = ["html_reports"] }
 
+[[bin]]
+name = "rscan"
+path = "src/main.rs"
+
+[[bin]]
+name = "generate_data"
+path = "src/bin/generate_data.rs"
+
 [[bench]]
 name = "search_benchmark"
+harness = false
+
+[[bench]]
+name = "query_benchmark"
 harness = false
